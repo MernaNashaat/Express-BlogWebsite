@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://Test123:Test123@cluster0-gamdj.mongodb.net/Blog-Site-ReactNode?retryWrites=true&w=majority',
+mongoose.connect(process.env.URI_Connection,
  {useNewUrlParser: true,
      useUnifiedTopology: true})
      .then(()=>
