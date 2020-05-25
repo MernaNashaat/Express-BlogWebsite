@@ -5,7 +5,7 @@ const cors = require('cors');
 const blogRouter=require('./Router/blog');
 const userRouter=require('./Router/User');
 const app=express();
-const port = 4000;
+const port = 80;
 app.use(cors());
 app.use(express.json());
 
