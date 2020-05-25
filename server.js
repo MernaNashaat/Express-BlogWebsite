@@ -5,11 +5,14 @@ const cors = require('cors');
 const blogRouter=require('./Router/blog');
 const userRouter=require('./Router/User');
 const app=express();
-const port = 80;
+// const port = 80;
 app.use(cors());
 app.use(express.json());
 
-
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
 
 app.use('/blog',blogRouter);
 app.use('/user',userRouter);
@@ -27,6 +30,6 @@ app.use((err,req,res,next)=>{
         });
 });
 
-app.listen(port,()=>{
-    console.info(`server is listening on port ${port}`);
-})
+// app.listen(port,()=>{
+//     console.info(`server is listening on port ${port}`);
+// })
